@@ -15,10 +15,10 @@ export const wilayah = {
   jumlahRT: 4, // TODO: Ganti dengan jumlah RT yang sebenarnya
   jumlahRW: 2, // TODO: Ganti dengan jumlah RW yang sebenarnya
   batas: {
-    utara: "[TODO: Batas wilayah sebelah utara]",
-    selatan: "[TODO: Batas wilayah sebelah selatan]",
-    timur: "[TODO: Batas wilayah sebelah timur]",
-    barat: "[TODO: Batas wilayah sebelah barat]"
+    utara: "-",
+    selatan: "-",
+    timur: "-",
+    barat: "-"
   }
 };
 

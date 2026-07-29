@@ -32,5 +32,5 @@ export const kontak = {
     youtube: "https://youtube.com"
   },
   // TODO: Ganti URL src pada embed peta Google Maps di bawah ini dengan peta Panjul yang sebenarnya
-  gmaps: "<iframe src="https://www.google.com/maps/d/u/0/embed?mid=10escdXvPmziS2DS1fqVcSqzet46HO28&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>"
+  gmaps: "https://www.google.com/maps/d/u/0/embed?mid=10escdXvPmziS2DS1fqVcSqzet46HO28&ehbc=2E312F&noprof=1"
 };

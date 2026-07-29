@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import { getCollection } from 'astro:content';
+import { desa } from '../data/desa';
+
+const fasilitas = await getCollection('fasilitas');
+const kegiatan = await getCollection('kegiatan');
+---
+
+<Layout title="Fasilitas & Kegiatan" description="Informasi fasilitas umum dan kegiatan kemasyarakatan">
+  <div class="bg-emerald-900 py-20 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Informasi Publik</h1>
+    <p class="text-emerald-100 text-lg max-w-2xl mx-auto px-4">Fasilitas umum yang tersedia dan agenda kegiatan warga di {desa.nama}.</p>
+  </div>
+
+  <Section title="Fasilitas Umum" subtitle="Daftar sarana dan prasarana yang dapat diakses oleh masyarakat." bg="gray">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {fasilitas.map((f) => (
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center shrink-0">
+            {/* SVG Icon based on Category */}
+            {f.data.kategori === 'Tempat Ibadah' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            )}
+            {f.data.kategori === 'Sekolah' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" /></svg>
+            )}
+            {f.data.kategori !== 'Tempat Ibadah' && f.data.kategori !== 'Sekolah' && (
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            )}
+          </div>
+          <div class="w-full">
+            <h3 class="font-bold text-gray-900">{f.data.nama}</h3>
+            <p class="text-sm text-gray-500">{f.data.kategori}</p>
+            {f.data.keterangan && <p class="text-xs text-gray-400 mt-2">{f.data.keterangan}</p>}
+            {f.data.gmapsEmbed && (
+              <div class="mt-4 w-full h-48 rounded-xl overflow-hidden shadow-sm border border-gray-200 [&>iframe]:w-full [&>iframe]:h-full" set:html={f.data.gmapsEmbed} />
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section title="Kegiatan & Organisasi" subtitle="Berbagai kegiatan kemasyarakatan dan agenda desa." bg="white">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {kegiatan.map((k) => (
+        <Card 
+          title={k.data.nama} 
+          description={k.data.deskripsi} 
+          image={k.data.foto} 
+          badge={k.data.kategori}
+        />
+      ))}
+    </div>
+  </Section>
+</Layout>

@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  badge?: string;
+  link?: string;
+  className?: string;
+}
+
+const { title, description, image, badge, link, className = '' } = Astro.props;
+
+const Tag = link ? 'a' : 'div';
+const tagProps = link ? { href: link, class: 'block hover:shadow-lg transition-shadow duration-300' } : {};
+---
+
+<Tag {...tagProps} class={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden ${className}`}>
+  {image && (
+    <div class="relative h-48 w-full overflow-hidden">
+      <img src={image} alt={title} class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+      {badge && (
+        <span class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+          {badge}
+        </span>
+      )}
+    </div>
+  )}
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-gray-900 mb-2">{title}</h3>
+    {description && <p class="text-gray-600 text-sm line-clamp-3">{description}</p>}
+    <slot />
+  </div>
+</Tag>

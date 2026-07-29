@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import { getCollection } from 'astro:content';
+import { desa } from '../data/desa';
+
+const perangkatEntries = await getCollection('perangkat');
+const perangkat = perangkatEntries.sort((a, b) => a.data.urutan - b.data.urutan);
+---
+
+<Layout title="Pemerintahan" description="Struktur Pemerintahan dan Perangkat Desa">
+  <div class="bg-emerald-900 py-20 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Pemerintahan</h1>
+    <p class="text-emerald-100 text-lg max-w-2xl mx-auto px-4">Daftar perangkat desa yang bertugas melayani masyarakat {desa.nama}.</p>
+  </div>
+
+  <Section bg="gray">
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Struktur Organisasi</h2>
+      <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 max-w-5xl mx-auto">
+        <!-- TODO: Ganti gambar struktur organisasi -->
+        <img src="https://placehold.co/1200x600/eaeaea/999?text=Bagan+Struktur+Organisasi" alt="Bagan Struktur Organisasi" class="w-full h-auto rounded-xl" />
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Perangkat Desa</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        {perangkat.map((p) => (
+          <Card 
+            title={p.data.nama} 
+            description={p.data.jabatan} 
+            image={p.data.foto} 
+            className="text-center"
+          />
+        ))}
+      </div>
+    </div>
+  </Section>
+</Layout>

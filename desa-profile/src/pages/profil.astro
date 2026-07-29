@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
-import { desa, wilayah } from "../data/desa";
+import { desa, wilayah, kontak } from "../data/desa";
 ---
 
 <Layout title="Profil Desa" description={`Profil dan sejarah ${desa.nama}`}>
@@ -129,6 +129,19 @@ import { desa, wilayah } from "../data/desa";
                 ></path>
               </svg>
             </div>
+          </div>
+
+          <!-- Google Maps Embed -->
+          <div class="mt-8 w-full h-80 rounded-xl overflow-hidden shadow-sm border border-gray-200">
+            <iframe
+              src={kontak.gmaps}
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>

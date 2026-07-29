@@ -11,31 +11,13 @@ import { desa, wilayah, kontak } from "../data/desa";
       Profil {desa.nama}
     </h1>
     <p class="text-emerald-100 text-lg max-w-2xl mx-auto px-4">
-      Mengenal lebih dekat sejarah, visi misi, dan wilayah kami.
+      Mengenal lebih dekat data dan wilayah kami.
     </p>
   </div>
 
   <Section bg="white">
     <div class="max-w-4xl mx-auto prose prose-emerald prose-lg">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">Sejarah & Asal-usul</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">{desa.asalUsul}</p>
-      <p class="text-gray-700 leading-relaxed mb-12">{desa.sejarah}</p>
 
-      <div class="bg-emerald-50 rounded-2xl p-8 mb-12">
-        <h2 class="text-2xl font-bold text-emerald-900 mb-4 text-center">
-          Visi & Misi
-        </h2>
-        <div class="mb-6">
-          <h3 class="text-xl font-semibold text-emerald-800 mb-2">Visi</h3>
-          <p class="text-gray-800 italic">"{desa.visi}"</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold text-emerald-800 mb-2">Misi</h3>
-          <ul class="list-disc pl-5 space-y-2 text-gray-800">
-            {desa.misi.map((m) => <li>{m}</li>)}
-          </ul>
-        </div>
-      </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mb-6">Data Wilayah</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -46,6 +28,10 @@ import { desa, wilayah, kontak } from "../data/desa";
           <ul class="space-y-3 text-gray-700">
             <!-- <li class="flex justify-between"><span>Luas Wilayah:</span> <span class="font-bold">{wilayah.luas}</span></li>
             <li class="flex justify-between"><span>Jumlah Dusun:</span> <span class="font-bold">{wilayah.jumlahDusun}</span></li> -->
+            <li class="flex justify-between">
+              <span>Jumlah KK:</span>
+              <span class="font-bold">{wilayah.jumlahKK}</span>
+            </li>
             <li class="flex justify-between">
               <span>Jumlah RT:</span>
               <span class="font-bold">{wilayah.jumlahRT}</span>

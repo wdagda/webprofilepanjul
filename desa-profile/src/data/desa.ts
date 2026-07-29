@@ -12,6 +12,7 @@ export const desa = {
 };
 
 export const wilayah = {
+  jumlahKK: 225,
   jumlahRT: 4, // TODO: Ganti dengan jumlah RT yang sebenarnya
   jumlahRW: 2, // TODO: Ganti dengan jumlah RW yang sebenarnya
   batas: {

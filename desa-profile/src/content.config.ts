@@ -26,7 +26,7 @@ const fasilitas = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/fasilitas" }),
   schema: z.object({
     nama: z.string(),
-    kategori: z.enum(["Sekolah", "Tempat Ibadah", "Kesehatan", "Fasilitas Umum", "Lainnya", "Rutin", "Tahunan", "Organisasi"]),
+    kategori: z.enum(["Sekolah", "Tempat Ibadah", "Kesehatan", "Fasilitas Umum", "Lainnya", "Rutin", "Tahunan", "Organisasi", "Pasar"]),
     keterangan: z.string().optional(),
     ikon: z.string().optional(),
     gmapsEmbed: z.string().optional(),

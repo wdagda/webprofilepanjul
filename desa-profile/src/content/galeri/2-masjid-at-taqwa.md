@@ -1,6 +1,6 @@
 ---
-judul: "Galeri Kosong"
-kategori: "Lainnya"
+judul: "Masjid At-Taqwa"
+kategori: "Masjid"
 ---
 
-Belum ada foto.
+Masjid At-Taqwa Panjul

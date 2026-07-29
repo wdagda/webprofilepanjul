@@ -66,73 +66,8 @@ import { desa, wilayah, kontak } from "../data/desa";
             Batas Wilayah
           </h3>
 
-          <div class="relative w-full h-48 flex items-center justify-center">
-            <!-- Utara -->
-            <div class="absolute top-0 w-full text-center">
-              <span
-                class="text-xs text-gray-500 uppercase font-bold tracking-wider"
-                >Utara</span
-              >
-              <p class="text-sm font-semibold text-gray-800">
-                {wilayah.batas.utara}
-              </p>
-            </div>
-            <!-- Selatan -->
-            <div class="absolute bottom-0 w-full text-center">
-              <span
-                class="text-xs text-gray-500 uppercase font-bold tracking-wider"
-                >Selatan</span
-              >
-              <p class="text-sm font-semibold text-gray-800">
-                {wilayah.batas.selatan}
-              </p>
-            </div>
-            <!-- Barat -->
-            <div
-              class="absolute left-0 h-full flex flex-col justify-center text-left max-w-[40%]"
-            >
-              <span
-                class="text-xs text-gray-500 uppercase font-bold tracking-wider"
-                >Barat</span
-              >
-              <p class="text-sm font-semibold text-gray-800 break-words">
-                {wilayah.batas.barat}
-              </p>
-            </div>
-            <!-- Timur -->
-            <div
-              class="absolute right-0 h-full flex flex-col justify-center text-right max-w-[40%]"
-            >
-              <span
-                class="text-xs text-gray-500 uppercase font-bold tracking-wider"
-                >Timur</span
-              >
-              <p class="text-sm font-semibold text-gray-800 break-words">
-                {wilayah.batas.timur}
-              </p>
-            </div>
-            <!-- Center Compass -->
-            <div
-              class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center"
-            >
-              <svg
-                class="w-6 h-6 text-emerald-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                ></path>
-              </svg>
-            </div>
-          </div>
-
           <!-- Google Maps Embed -->
-          <div class="mt-8 w-full h-80 rounded-xl overflow-hidden shadow-sm border border-gray-200">
+          <div class="w-full h-96 rounded-xl overflow-hidden shadow-sm border border-gray-200">
             <iframe
               src={kontak.gmaps}
               width="100%"

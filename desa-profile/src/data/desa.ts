@@ -32,5 +32,5 @@ export const kontak = {
     youtube: "https://youtube.com"
   },
   // TODO: Ganti URL src pada embed peta Google Maps di bawah ini dengan peta Panjul yang sebenarnya
-  gmaps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126487.89667746222!2d110.1582234!3d-7.8105007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7af188c0053931%3A0x3027a76e352bb80!2sSentolo%2C%20Kulon%20Progo%20Regency%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1710000000000!5m2!1sen!2sid"
+  gmaps: "<iframe src="https://www.google.com/maps/d/u/0/embed?mid=10escdXvPmziS2DS1fqVcSqzet46HO28&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>"
 };

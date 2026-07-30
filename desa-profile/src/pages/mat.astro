@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="MAT Kualitas" description="Melihat Dokumen MAT Kualitas Desa secara detail dengan kualitas tinggi">
+  <div class="bg-emerald-900 py-20 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">MAT Kualitas</h1>
+    <p class="text-emerald-100 text-lg max-w-2xl mx-auto px-4">Dokumen Peta/MAT kualitas tinggi yang dapat Anda zoom untuk melihat detailnya secara lebih jelas.</p>
+  </div>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-2 md:p-4 h-[80vh] w-full flex flex-col">
+      <div class="mb-4 flex justify-between items-center px-2">
+        <span class="text-sm font-medium text-gray-500">Penampil Dokumen Interaktif</span>
+        <a href="/assets/MAT/MAT%20KUALITAS.pdf" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          Unduh Dokumen
+        </a>
+      </div>
+      <div class="flex-grow rounded-xl overflow-hidden bg-gray-100 border border-gray-200">
+        <object data="/assets/MAT/MAT%20KUALITAS.pdf#toolbar=1&navpanes=0&scrollbar=1" type="application/pdf" width="100%" height="100%">
+          <div class="flex flex-col items-center justify-center h-full p-8 text-center">
+            <svg class="w-16 h-16 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            <p class="text-gray-600 mb-4">Browser Anda tidak memiliki plugin bawaan untuk menampilkan PDF.</p>
+            <a href="/assets/MAT/MAT%20KUALITAS.pdf" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-xl font-medium transition-colors">
+              Unduh PDF Sekarang
+            </a>
+          </div>
+        </object>
+      </div>
+    </div>
+  </section>
+</Layout>
